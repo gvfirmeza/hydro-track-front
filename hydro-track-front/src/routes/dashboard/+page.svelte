@@ -103,7 +103,7 @@
       ?.split("=")[1];
 
     if (!cookieDeviceId) {
-      window.location.href = "/";
+      window.location.href = "./";
       return;
     }
 
@@ -131,8 +131,28 @@
           y: { 
             beginAtZero: true,
             suggestedMax: alturaMaximaGrafico,
+            ticks: {
+              color: '#e0e0e0'
+            },
+            title: {
+              display: false,
+              text: getUnidadeTexto(),
+              color: '#e0e0e0'
+            }
           },
+          x: {
+            ticks: {
+              color: '#e0e0e0'
+            }
+          }
         },
+        plugins: {
+          legend: {
+            labels: {
+              color: '#e0e0e0'
+            }
+          }
+        }
       },
     });
 
@@ -153,8 +173,30 @@
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-          y: { beginAtZero: true },
+          y: { 
+            beginAtZero: true,
+            ticks: {
+              color: '#e0e0e0'
+            },
+            title: {
+              display: false,
+              text: getUnidadeTexto(),
+              color: '#e0e0e0'
+            }
+          },
+          x: {
+            ticks: {
+              color: '#e0e0e0'
+            }
+          }
         },
+        plugins: {
+          legend: {
+            labels: {
+              color: '#e0e0e0'
+            }
+          }
+        }
       },
     });
 
@@ -162,11 +204,11 @@
     setInterval(buscarFluxoTempoReal, 1000); // Atualiza a cada 1 segundo
 
     buscarFluxoDiario();
-    setInterval(buscarFluxoDiario, 1000); // Atualiza o diário a cada 1 min
+    setInterval(buscarFluxoDiario, 1000); // Atualiza a cada 1 segundo
   });
 </script>
 
-<div class="min-h-screen bg-gray-900 text-gray-200">
+<div class="min-h-screen ">
   <Header />
   <div class="max-w-[82%] m-auto p-6 space-y-12">
     
